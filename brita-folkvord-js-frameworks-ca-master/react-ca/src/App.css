@@ -5,6 +5,18 @@ body {
   min-height: 100vh;
   max-width: 100vw;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container{
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.card-img-top{
+  min-height: 150px;
 }
 
 .heading {
@@ -20,7 +32,11 @@ Form {
 }
 
 .card {
-  margin-bottom: 16px;
+  margin: 16px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .card-img-top {
@@ -42,4 +58,21 @@ Form {
 
 .detail-info {
   width: 100%;
+}
+
+footer{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 0;
+  background-color: #343a40;
+  color: white;
+}
+
+footer p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }

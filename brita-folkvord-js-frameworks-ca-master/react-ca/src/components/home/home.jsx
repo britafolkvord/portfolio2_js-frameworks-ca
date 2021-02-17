@@ -1,4 +1,5 @@
 import React from "react";
+
 import GameList from "../game/gameList";
 import Heading from "../layout/heading";
 

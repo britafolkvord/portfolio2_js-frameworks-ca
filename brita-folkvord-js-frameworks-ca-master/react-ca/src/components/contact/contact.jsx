@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Container, Button, Form } from "react-bootstrap";
+
 import Heading from "../layout/heading";
 import ErrorMessage from "./errorMessage";
 
@@ -12,7 +12,7 @@ export default function Contact() {
   }
 
   return (
-    <>
+    <Container fluid>
       <Heading title="Contact" />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
@@ -87,6 +87,6 @@ export default function Contact() {
 
         <Button type="submit">Submit</Button>
       </Form>
-    </>
+    </Container>
   );
 }

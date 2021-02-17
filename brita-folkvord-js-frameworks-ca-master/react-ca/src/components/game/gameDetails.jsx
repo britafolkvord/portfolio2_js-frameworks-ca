@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "react-bootstrap/Spinner";
 import { useParams } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
+import {Spinner, Row, Col, Image, Container} from "react-bootstrap";
+
 import { BASE_URL } from "../constants/api";
 import Heading from "../layout/heading";
 
@@ -14,6 +12,7 @@ function GameDetails() {
   let { id } = useParams();
 
   const url = BASE_URL + "/" + id;
+
 
   useEffect(() => {
     fetch(url)
@@ -28,7 +27,7 @@ function GameDetails() {
   }
 
   return (
-    <>
+    <Container fluid>
       <Heading title="Game Details" />
       <Row className="details">
         <Col md={6} className="detail-image">
@@ -42,7 +41,7 @@ function GameDetails() {
           <a href={detail.website}>Go to website</a>
         </Col>
       </Row>
-    </>
+    </Container>
   );
 }
 

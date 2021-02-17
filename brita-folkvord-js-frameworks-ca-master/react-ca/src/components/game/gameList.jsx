@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Spinner from "react-bootstrap/Spinner";
+import {Spinner, Button, Card, ListGroup, Col, Row, Container} from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+
 import GameSearch from "./searchGames";
 import { BASE_URL } from "../constants/api";
 
@@ -29,7 +25,7 @@ function GameList() {
     const searchValue = e.target.value.toLowerCase();
     const filteredArray = games.filter(function (game) {
       const lowerCaseName = game.name.toLowerCase();
-      if (lowerCaseName.startsWith(searchValue)) {
+      if (lowerCaseName.includes(searchValue)) {
         return true;
       }
       return false;
@@ -42,7 +38,7 @@ function GameList() {
   }
 
   return (
-    <>
+    <Container fluid>
       <GameSearch handleSearch={filterGames} />
       <Row>
         {filteredGames.map((game) => {
@@ -67,7 +63,7 @@ function GameList() {
           );
         })}
       </Row>
-    </>
+    </Container>
   );
 }
 
